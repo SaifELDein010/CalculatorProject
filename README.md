@@ -7,7 +7,7 @@
 - Commend line (Countinues -> to perform expression on previes result, New -> to make a new expression without adding result,
   Clear -> to clear result value, Chanage -> to chanage between Types of calculator, End -> to close APP)
 
-- Include different type of calculator
+- Include different types of calculator
   - Mathematical Calculator -> Simple operator ( +, -, *, /)
   - Advanced Mathematical Calculator -> sqrt(), pow(), Min(), Max() and so on
   - Programmer Calculator -> sush as : Convert binary number to deciemal number
