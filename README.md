@@ -4,8 +4,7 @@
 
 - Simple operator ( +, -, *, / )
   
-- Commend line (Countinues -> to perform expression on previes result, New -> to make a new expression without adding result,
-  Clear -> to clear result value, Change -> to change between Types of calculator, End -> to close APP)
+- Commend line ( Clear -> to clear result value, Change -> to change between Types of calculator, End -> to close APP )
 
 - Include different types of calculator
   - Mathematical Calculator -> Simple operator ( +, -, *, /)
