@@ -11,5 +11,5 @@
   - Advanced Mathematical Calculator -> sqrt(), pow(), Min(), Max() and so on
   - Programmer Calculator -> sush as : Convert binary number to deciemal number
     
-- Can make expression statement with more than operator
+- Can make one-line expression statement with more than operator
     
