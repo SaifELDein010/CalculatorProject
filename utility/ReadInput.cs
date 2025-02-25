@@ -8,7 +8,6 @@ namespace CalculatorProject.utility
     class ReadInput
     {
 
-
         static public string ReadText(string message)
         {
 
@@ -21,6 +20,15 @@ namespace CalculatorProject.utility
 
         }
 
+        static public string ReadText()
+        {
+
+            string text = "";
+            text = Console.ReadLine();
+
+            return text;
+
+        }
 
         static public int ReadNumber(string message)
         {
@@ -43,7 +51,6 @@ namespace CalculatorProject.utility
 
         }
 
-
         static public bool IsNumber(string digit)
         {
             int number = 0;
@@ -56,7 +63,21 @@ namespace CalculatorProject.utility
 
         }
 
+        static public int ReadNumberBetweenRange(string message, int from, int to)
+        {
 
+            int number = ReadNumber(message);
+
+            while(number < from || number > to)
+            {
+
+                Console.WriteLine("Number is out of range");
+                number = ReadNumber(message);
+
+            }
+
+            return number;
+        }
 
     }
 

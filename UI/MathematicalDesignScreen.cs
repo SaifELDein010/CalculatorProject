@@ -1,4 +1,6 @@
 ﻿using System;
+using CalculatorProject.Servers;
+using CalculatorProject.utility;
 
 
 namespace CalculatorProject.UI
@@ -9,9 +11,10 @@ namespace CalculatorProject.UI
         static private void ErrorMessage()
         {
 
-            Console.Write("Wronge Commed/expression. Enter vaild Commed/expression >> ");
+            Console.Write("\nWronge Commed or expression. Enter vaild Commed/expression >> ");
 
         }
+
         static private void HeaderScreen()
         {
 
@@ -30,13 +33,34 @@ namespace CalculatorProject.UI
 
 
 
-        static public void MathematicalCalculatorScreen()
+        static public bool MathematicalCalculatorScreen()
         {
+
+            Console.Clear();
 
             HeaderScreen();
             ExplainScreen();
 
-            Console.Write("  Enter \"Commend\" or Expression statement \n  >> ");
+
+
+            bool isVaild = false;
+            bool closeApp = false;
+
+            string inputText = ReadInput.ReadText(" Enter \"Commend\" or Expression statement \n >> ");
+            isVaild = MathematicalLogic.PerformStatament(inputText, ref closeApp);
+
+            while(!isVaild)
+            {
+
+                ErrorMessage();
+                inputText = ReadInput.ReadText();
+                isVaild = MathematicalLogic.PerformStatament(inputText, ref closeApp);
+
+            }
+
+
+
+            return closeApp;
 
         }
 

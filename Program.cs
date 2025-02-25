@@ -8,7 +8,14 @@ namespace CalculatorProject
         static void Main()
         {
 
-            MathematicalDesignScreen.MathematicalCalculatorScreen();
+            bool closeApp = false;
+
+            do {
+
+                closeApp = MathematicalDesignScreen.MathematicalCalculatorScreen();
+
+            } while (!closeApp);
+
 
             Console.ReadKey();
 
