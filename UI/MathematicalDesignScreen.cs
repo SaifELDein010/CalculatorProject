@@ -22,7 +22,7 @@ namespace CalculatorProject.UI
         static private void ExplainScreen()
         {
 
-            Console.WriteLine("To perform Commend line screen write \"Commend\" without quote");
+            Console.WriteLine("To perform Commend line write \"Commend\" without quote");
             Console.WriteLine("To perform expression write your expression (Number1) (Operator) (Number2) Then press Enter\n");
 
         }
