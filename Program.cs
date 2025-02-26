@@ -10,7 +10,8 @@ namespace CalculatorProject
 
             bool closeApp = false;
 
-            do {
+            do
+            {
 
                 closeApp = MathematicalDesignScreen.MathematicalCalculatorScreen();
 

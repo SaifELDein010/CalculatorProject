@@ -1,10 +1,11 @@
 ﻿
 using CalculatorProject.utility;
+using System;
+using System.Runtime.CompilerServices;
 
 namespace CalculatorProject.Servers
 {
  
-    
     class CommendLineLogic
     {
 
@@ -14,7 +15,7 @@ namespace CalculatorProject.Servers
         {
 
             // Clear prev answer 
-            Console.Write("Press any key to turn mathematical calulator...");
+            Console.Write("Will come soon, Press any key to turn mathematical calulator...");
             Console.ReadKey();
 
         }
@@ -23,15 +24,9 @@ namespace CalculatorProject.Servers
         {
 
             // Change type of calculator
-            Console.Write("Press any key to turn mathematical calulator...");
+            Console.Write("Will come soon, Press any key to turn mathematical calulator...");
             Console.ReadKey();
 
-        }
-
-        static private void End(ref bool closeApp) { 
-        
-            closeApp = true; 
-        
         }
 
 
@@ -64,7 +59,7 @@ namespace CalculatorProject.Servers
                     break;
 
                 case 3:
-                    End(ref closeApp);
+                    closeApp = true;
                     break;
 
             }
@@ -85,7 +80,77 @@ namespace CalculatorProject.Servers
 
     }
 
+    class EpressionLogic
+    {
 
+        static private dynamic number1 = 0;
+        static private dynamic number2 = 0;
+        static private char operator_ = '+';
+
+
+        static private dynamic HandelDivision()
+        {
+
+            if(number2 == 0)
+            {
+
+                Console.WriteLine("Undefiend");
+                return 0;
+
+            }
+
+            return number1 / number2;
+
+        }
+
+        static private dynamic PerformExpression()
+        {
+
+            switch(operator_)
+            {
+
+                case '+':
+                    return number1 + number2;
+
+                case '-':
+                    return number1 - number2;
+
+                case '*':
+                    return number1 * number2;
+
+                case '/':
+                    return HandelDivision();
+
+                default:
+                    Console.WriteLine("Invaild operator");
+                    return -1;
+
+            }
+
+        }
+
+        static private void GetInputFromUser()
+        {
+
+            number1 = ReadInput.ReadNumber("(Number 1) > ");
+            operator_ = ReadInput.ReadLetter("(Operator) > "); 
+            number2 = ReadInput.ReadNumber("(Number 2) > ");
+
+        }
+
+
+        static public void ExpressionStatament()
+        {
+
+            GetInputFromUser();
+            Console.WriteLine($"\n{number1} {operator_} {number2} = {PerformExpression()}");
+
+            Console.Write("\nPress any key...");
+            Console.ReadKey();
+
+        }
+
+    }
 
     class MathematicalLogic
     {
@@ -104,8 +169,7 @@ namespace CalculatorProject.Servers
             } else if(text.Equals("expression"))
             {
 
-
-                // Expression methode will be here
+                EpressionLogic.ExpressionStatament();
                 return true;
 
             }
@@ -117,6 +181,5 @@ namespace CalculatorProject.Servers
 
 
     }
-
 
 }

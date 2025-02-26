@@ -30,14 +30,13 @@ namespace CalculatorProject.utility
 
         }
 
-        static public int ReadNumber(string message)
+        public static dynamic ReadNumber()
         {
 
-            Console.Write(message);
             string stringNumber = Console.ReadLine();
-            int number = 0;
+            dynamic number = 0;
 
-            while (!(int.TryParse(stringNumber, out number)))
+            while (!(int.TryParse(stringNumber, out int num1)) && !(double.TryParse(stringNumber, out double num2)))
             {
 
                 Console.Write($"this is not vaild \"{stringNumber}\" number. Please, Enter vaild number > ");
@@ -45,16 +44,31 @@ namespace CalculatorProject.utility
 
             }
 
-            number = Convert.ToInt32(stringNumber);
+            if((int.TryParse(stringNumber, out int i)))
+            {
+                number = Convert.ToInt32(stringNumber);
+            }
+            else
+            {
+                number = Convert.ToDouble(stringNumber);
+            }
 
             return number;
 
         }
 
+        public static dynamic ReadNumber(string message)
+        {
+
+            Console.Write(message);
+            return ReadNumber();
+
+        }
+
         static public bool IsNumber(string digit)
         {
-            int number = 0;
-            if(!(int.TryParse(digit, out number)))
+            dynamic number = 0;
+            if(!(int.TryParse(digit, out int numb1)) && !(double.TryParse(digit, out double num2)))
             {
                 return false;
             }
@@ -63,10 +77,10 @@ namespace CalculatorProject.utility
 
         }
 
-        static public int ReadNumberBetweenRange(string message, int from, int to)
+        static public dynamic ReadNumberBetweenRange(string message, dynamic from, dynamic to)
         {
 
-            int number = ReadNumber(message);
+            dynamic number = ReadNumber(message);
 
             while(number < from || number > to)
             {
@@ -78,6 +92,27 @@ namespace CalculatorProject.utility
 
             return number;
         }
+
+
+        static public char ReadLetter()
+        {
+
+            char letter = ' ';
+
+            letter = Convert.ToChar(Console.ReadLine());
+
+            return letter;
+
+        }
+
+        static public char ReadLetter(string message)
+        {
+
+            Console.Write(message);
+            return ReadLetter();
+
+        }
+
 
     }
 
