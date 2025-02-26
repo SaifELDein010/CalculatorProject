@@ -4,7 +4,7 @@
 
 - Simple operator ( +, -, *, / )
   
-- Commend line ( Clear -> to clear result value, Change -> to change between Types of calculator, End -> to close APP )
+- Commend line ( Change -> to change between Types of calculator, End -> to close APP )
 
 - Include different types of calculator
   - Mathematical Calculator -> Simple operator ( +, -, *, / )
