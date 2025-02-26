@@ -101,7 +101,14 @@ namespace CalculatorProject.Servers
                 CommendLineLogic.CommendLine(ref closeApp);
                 return true;
 
-            } 
+            } else if(text.Equals("expression"))
+            {
+
+
+                // Expression methode will be here
+                return true;
+
+            }
 
 
             return false;

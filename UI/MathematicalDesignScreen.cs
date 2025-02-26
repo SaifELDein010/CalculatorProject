@@ -11,7 +11,7 @@ namespace CalculatorProject.UI
         static private void ErrorMessage()
         {
 
-            Console.Write("\nWronge Commed or expression. Enter vaild Commed/expression >> ");
+            Console.Write("\nInvaild Input, Enter \"Commend\" or \"Expression\" >> ");
 
         }
 
@@ -26,7 +26,7 @@ namespace CalculatorProject.UI
         {
 
             Console.WriteLine("To perform Commend line write \"Commend\" without quote");
-            Console.WriteLine("To perform expression write your expression (Number1) (Operator) (Number2) Then press Enter\n");
+            Console.WriteLine("To perform expression write \"Expression\" without quote\n");
 
         }
 
@@ -46,7 +46,7 @@ namespace CalculatorProject.UI
             bool isVaild = false;
             bool closeApp = false;
 
-            string inputText = ReadInput.ReadText(" Enter \"Commend\" or Expression statement \n >> ");
+            string inputText = ReadInput.ReadText(" Enter \"Commend\" or \"Expression\" \n >> ");
             isVaild = MathematicalLogic.PerformStatament(inputText, ref closeApp);
 
             while(!isVaild)
